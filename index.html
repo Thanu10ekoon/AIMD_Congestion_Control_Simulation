@@ -9,18 +9,44 @@
 </head>
 <body>
     <div class="container">
-        <h1>TCP Congestion Control (AIMD)</h1>
-        <p>Simulate the Additive Increase, Multiplicative Decrease algorithm.</p>
-        
-        <div class="controls">
-            <button id="btn-step" class="btn success">Step Forward (Success)</button>
-            <button id="btn-loss" class="btn danger">Simulate Packet Loss</button>
-            <button id="btn-reset" class="btn secondary">Reset Chart</button>
+        <div class="header">
+            <h1>TCP Congestion Control (AIMD)</h1>
+            <p>Simulate the Additive Increase, Multiplicative Decrease algorithm.</p>
         </div>
+        
+        <div class="layout">
+            <div class="main-panel">
+                <div class="controls">
+                    <button id="btn-step" class="btn success">Step Forward (Success)</button>
+                    <button id="btn-loss" class="btn danger">Simulate Packet Loss</button>
+                    <button id="btn-reset" class="btn secondary">Reset</button>
+                </div>
+                <div id="chart"></div>
+            </div>
 
-        <div id="chart"></div>
+            <div class="side-panel">
+                <div class="info-section">
+                    <h3>TCP Equations</h3>
+                    <div class="math-box">
+                        <p><strong>TCP rate &approx;</strong> cwnd / RTT <em>(bytes/sec)</em></p>
+                        <p><strong>LastByteSent - LastByteAcked &le;</strong> cwnd</p>
+                    </div>
+                </div>
+
+                <div class="info-section">
+                    <h3>AIMD Definitions</h3>
+                    <div id="def-increase" class="def-box">
+                        <strong>Additive Increase:</strong><br>
+                        Increase sending rate by 1 maximum segment size every RTT until loss detected.
+                    </div>
+                    <div id="def-decrease" class="def-box">
+                        <strong>Multiplicative Decrease:</strong><br>
+                        Cut sending rate in half at each loss event.
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
