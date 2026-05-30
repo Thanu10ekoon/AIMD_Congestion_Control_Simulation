@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCP AIMD Simulator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>TCP Congestion Control (AIMD)</h1>
+        <p>Simulate the Additive Increase, Multiplicative Decrease algorithm.</p>
+        
+        <div class="controls">
+            <button id="btn-step" class="btn success">Step Forward (Success)</button>
+            <button id="btn-loss" class="btn danger">Simulate Packet Loss</button>
+            <button id="btn-reset" class="btn secondary">Reset Chart</button>
+        </div>
+
+        <div id="chart"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
